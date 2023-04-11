@@ -10,13 +10,23 @@ function ReactIntegration() {
       console.log("Disconnected");
     }
   }
+
+  //User Profile Details
+  const userProfileListener = async (res) => {
+    console.log("User Profile Listener", res);
+  };
+
   // Initialize SDK
   const initSDK = async () => {
     const initializeObj = {
       apiBaseUrl: `https://api-preprod-sandbox.mirrorfly.com/api/v1`,
       licenseKey: `7CLjsomc3zXoMQ7Jq11IEOkyt83Yul`,
       isTrialLicenseKey: `TRIAL_MODE`,
-      callbackListeners: { connectionListener, messageListener },
+      callbackListeners: {
+        connectionListener,
+        messageListener,
+        userProfileListener,
+      },
     };
 
     let initSDKResponse = await SDK.initializeSDK(initializeObj);
@@ -60,6 +70,13 @@ function ReactIntegration() {
     console.log("Message Listener", response);
   }
 
+  //get user profile details
+  const getUserProfile = async () => {
+    const toUserJid = SDK.getJid("8985454546");
+    let profileDetails = await SDK.getUserProfile(toUserJid.userJid);
+    console.log("Profile Details", profileDetails);
+  };
+
   //Button For Operations
   return (
     <div className="bg-gray-900 text-white min-h-screen">
@@ -96,6 +113,13 @@ function ReactIntegration() {
           className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full shadow-md"
         >
           Send Text Message
+        </button>
+
+        <button
+          onClick={getUserProfile}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
+        >
+          Get User Profile
         </button>
       </div>
     </div>
