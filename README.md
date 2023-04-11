@@ -35,5 +35,5 @@ This is a chat application built using React and Mirrorfly SDK.
 
 ## Resources
 
-- [React documentation](https://reactjs.org/docs/getting-started.html)
-- [Mirrorfly SDK documentation](https://www.mirrorfly.com/docs/)
+- [React documentation](https://react.dev/)
+- [Mirrorfly SDK documentation](https://www.mirrorfly.com/docs/
