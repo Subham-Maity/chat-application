@@ -1,1 +1,1 @@
-# demo-chat-application
+# Secure CHAT App (SDK)
