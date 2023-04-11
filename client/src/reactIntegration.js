@@ -26,6 +26,13 @@ function ReactIntegration() {
   const registerUser = async () => {
     let userRegisteration = await SDK.register(`8985454546`); //123456789
     console.log(userRegisteration);
+    userName = userRegisteration.data.username;
+    password = userRegisteration.data.password;
+  };
+
+  const userLogin = async () => {
+    let login = await SDK.connect(userName, password);
+    console.log(login);
   };
   return (
     <div>
@@ -33,6 +40,11 @@ function ReactIntegration() {
       <div>
         <p>Register New user:</p>
         <button onClick={registerUser}>Register</button>
+      </div>
+
+      <div>
+        <p>Login:</p>
+        <button onClick={() => userLogin(userName, password)}>Login</button>
       </div>
     </div>
   );
