@@ -24,12 +24,16 @@ function ReactIntegration() {
   let userName = "";
   let password = "";
   const registerUser = async () => {
-    let userRegisteration = await SDK.register(`123456789`); //123456789
+    let userRegisteration = await SDK.register(`655643213469416467316`); //123456789
     console.log(userRegisteration);
   };
   return (
     <div>
       <button onClick={initSDK}>InittialzeSDK</button>
+      <div>
+        <p>Register New user:</p>
+        <button onClick={registerUser}>Register</button>
+      </div>
     </div>
   );
 }
