@@ -16,7 +16,7 @@ function ReactIntegration() {
       apiBaseUrl: `https://api-preprod-sandbox.mirrorfly.com/api/v1`,
       licenseKey: `7CLjsomc3zXoMQ7Jq11IEOkyt83Yul`,
       isTrialLicenseKey: `TRIAL_MODE`,
-      callbackListeners: { connectionListener },
+      callbackListeners: { connectionListener, messageListener },
     };
 
     let initSDKResponse = await SDK.initializeSDK(initializeObj);
@@ -41,10 +41,17 @@ function ReactIntegration() {
   };
   //SEND TEXT MESSAGE
   const textMessage = async () => {
-    let msg = "Message from Integration"
-    let toUserJid = SDK.getJid(`8985454546`)
+    let msg = "Message from Integration";
+    let username = "8985454546"; // Replace this with the actual username
+    let xmppSocketHost = "example.com"; // Replace this with the actual xmppSocketHost
+    let toUserJid = username + "@" + xmppSocketHost;
     let textMsg = await SDK.sendTextMessage(toUserJid, msg);
     console.log(textMsg);
+  };
+  //Recieve Text Message
+  function messageListener(response) {
+    console.log("Message Listener", response);
+  }
 
   //Button For Operations
   return (
@@ -58,6 +65,16 @@ function ReactIntegration() {
       <div>
         <p>Login:</p>
         <button onClick={() => userLogin(userName, password)}>Login</button>
+      </div>
+
+      <div>
+        <p>Send Text Message:</p>
+        <button onClick={textMessage}>Send Text Message</button>
+      </div>
+
+      <div>
+        <p>Receive Text Message:</p>
+        <button onClick={messageListener}>Receive Text Message</button>
       </div>
     </div>
   );
