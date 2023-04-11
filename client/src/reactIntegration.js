@@ -39,6 +39,13 @@ function ReactIntegration() {
     let login = await SDK.connect(userName, password);
     console.log(login);
   };
+
+  //LOGOUT USER
+  const LogOut = async () => {
+    let userLoggedOut = await SDK.logout();
+    console.log(`LoggedOutStatus: ${userLoggedOut}`);
+  };
+
   //SEND TEXT MESSAGE
   const textMessage = async () => {
     let msg = "Message from Integration";
@@ -76,6 +83,14 @@ function ReactIntegration() {
         >
           Login
         </button>
+
+        <button
+          onClick={LogOut}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
+        >
+          Logout
+        </button>
+
         <button
           onClick={textMessage}
           className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full shadow-md"
