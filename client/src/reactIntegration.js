@@ -1,6 +1,7 @@
 import React from "react";
 import SDK from "./SDK";
 
+// React Integration
 function ReactIntegration() {
   function connectionListener(response) {
     if (response.status === "CONNECTED") {
@@ -9,6 +10,7 @@ function ReactIntegration() {
       console.log("Disconnected");
     }
   }
+  // Initialize SDK
   const initSDK = async () => {
     const initializeObj = {
       apiBaseUrl: `https://api-preprod-sandbox.mirrorfly.com/api/v1`,
@@ -23,6 +25,8 @@ function ReactIntegration() {
 
   let userName = "";
   let password = "";
+
+  // Register new user
   const registerUser = async () => {
     let userRegisteration = await SDK.register(`8985454546`); //123456789
     console.log(userRegisteration);
@@ -30,10 +34,19 @@ function ReactIntegration() {
     password = userRegisteration.data.password;
   };
 
+  // Login user
   const userLogin = async () => {
     let login = await SDK.connect(userName, password);
     console.log(login);
   };
+  //SEND TEXT MESSAGE
+  const textMessage = async () => {
+    let msg = "Message from Integration"
+    let toUserJid = SDK.getJid(`8985454546`)
+    let textMsg = await SDK.sendTextMessage(toUserJid, msg);
+    console.log(textMsg);
+
+  //Button For Operations
   return (
     <div>
       <button onClick={initSDK}>InittialzeSDK</button>
