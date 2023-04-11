@@ -11,10 +11,10 @@ function ReactIntegration() {
   }
   const initSDK = async () => {
     const initializeObj = {
-      apiBaseUrl: `API_URL`,
+      apiBaseUrl: `https://api-preprod-sandbox.mirrorfly.com/api/v1`,
       licenseKey: `7CLjsomc3zXoMQ7Jq11IEOkyt83Yul`,
       isTrialLicenseKey: `TRIAL_MODE`,
-      callbackListeners: {},
+      callbackListeners: { connectionListener },
     };
     await SDK.initializeSDK(initializeObj);
   };
