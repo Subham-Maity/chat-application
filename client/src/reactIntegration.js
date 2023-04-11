@@ -97,6 +97,11 @@ function ReactIntegration() {
     let unblockUser = await SDK.unblockUser(userJid.userJid);
     console.log("Unblock User", unblockUser);
   };
+  //Get User I Blocked
+  const GetUserIBlocked = async () => {
+    let userIBlocked = await SDK.getUsersIBlocked();
+    console.log("User I Blocked", userIBlocked);
+  };
 
   //Button For Operations
   return (
@@ -148,6 +153,13 @@ function ReactIntegration() {
           className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
         >
           Block User
+        </button>
+
+        <button
+          onClick={GetUserIBlocked}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
+        >
+          Get User I Blocked
         </button>
 
         <button
