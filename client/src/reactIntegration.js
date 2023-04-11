@@ -11,7 +11,7 @@ function ReactIntegration() {
     }
   }
 
-  //User Profile Details
+  //User Profile Details Listener
   const userProfileListener = async (res) => {
     console.log("User Profile Listener", res);
   };
@@ -77,6 +77,13 @@ function ReactIntegration() {
     console.log("Profile Details", profileDetails);
   };
 
+  //Last Seen Time
+  const LastSeen = async () => {
+    const userJid = SDK.getJid("8985454546");
+    let lastSeen = await SDK.getLastSeen(userJid.userJid);
+    console.log("Last Seen", lastSeen);
+  };
+
   //Button For Operations
   return (
     <div className="bg-gray-900 text-white min-h-screen">
@@ -120,6 +127,13 @@ function ReactIntegration() {
           className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
         >
           Get User Profile
+        </button>
+
+        <button
+          onClick={LastSeen}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
+        >
+          Last Seen
         </button>
       </div>
     </div>
