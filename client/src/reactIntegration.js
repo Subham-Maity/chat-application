@@ -56,7 +56,7 @@ function ReactIntegration() {
   //Button For Operations
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <h1 className="text-4xl font-bold p-4">MirrorFly Chat</h1>
+      <h1 className="text-4xl font-bold p-4">dev-subham</h1>
       <div className="p-4 max-w-md mx-auto bg-gray-800 rounded-lg shadow-md">
         <button
           onClick={initSDK}
