@@ -1,5 +1,20 @@
 import React from "react";
 import SDK from "./SDK";
+import {
+  FaUser,
+  FaUserPlus,
+  FaUserSlash,
+  FaLock,
+  FaRegPaperPlane,
+  FaUserAlt,
+  FaStopCircle,
+  FaBan,
+  FaUnlockAlt,
+  FaSignOutAlt,
+  FaQuestionCircle,
+} from "react-icons/fa";
+
+//Button For Operations
 
 // React Integration
 function ReactIntegration() {
@@ -105,75 +120,93 @@ function ReactIntegration() {
 
   //Button For Operations
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen">
       <h1 className="text-4xl font-bold p-4">dev-subham</h1>
       <div className="p-4 max-w-md mx-auto bg-gray-800 rounded-lg shadow-md">
-        <button
-          onClick={initSDK}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
-        >
-          Initialize SDK
-        </button>
-        <button
-          onClick={registerUser}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
-        >
-          Register
-        </button>
-        <button
-          onClick={() => userLogin(userName, password)}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
-        >
-          Login
-        </button>
+        <div className="grid grid-cols-2 gap-4">
+          <button
+            onClick={initSDK}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaUser />
+            <span className="ml-2">Init SDK</span>
+          </button>
+          <button
+            onClick={registerUser}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaUserPlus />
+            <span className="ml-2">Register User</span>
+          </button>
+          <button
+            onClick={() => userLogin(userName, password)}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaLock />
+            <span className="ml-2">User Login</span>
+          </button>
+          <button
+            onClick={textMessage}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaRegPaperPlane />
+            <span className="ml-2">Send Message</span>
+          </button>
+          <button
+            onClick={getUserProfile}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaUserAlt />
+            <span className="ml-2">Get User Profile</span>
+          </button>
+          <button
+            onClick={LastSeen}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaStopCircle />
+            <span className="ml-2">Last Seen</span>
+          </button>
+          <button
+            onClick={BlockUser}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaBan />
+            <span className="ml-2">Block User</span>
+          </button>
+          <button
+            onClick={GetUserIBlocked}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaUserSlash />
+            <span className="ml-2">Get User I Blocked</span>
+          </button>
 
-        <button
-          onClick={textMessage}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold  py-2 px-4 rounded w-full shadow-md"
-        >
-          Send Text Message
-        </button>
-
-        <button
-          onClick={getUserProfile}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
-        >
-          Get User Profile
-        </button>
-
-        <button
-          onClick={LastSeen}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
-        >
-          Last Seen
-        </button>
-
-        <button
-          onClick={BlockUser}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
-        >
-          Block User
-        </button>
-
-        <button
-          onClick={GetUserIBlocked}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
-        >
-          Get User I Blocked
-        </button>
-
-        <button
-          onClick={UnblockUser}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
-        >
-          Unblock User
-        </button>
-        <button
-          onClick={LogOut}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full mb-2 shadow-md"
-        >
-          Logout
-        </button>
+          <button
+            onClick={UnblockUser}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaUnlockAlt />
+            <span className="ml-2">Unblock User</span>
+          </button>
+          <button
+            onClick={LogOut}
+            className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          >
+            <FaSignOutAlt />
+            <span className="ml-2">Logout</span>
+          </button>
+        </div>
+      </div>
+      <div className="p-4 m-5 max-w-md mx-auto bg-gray-800 rounded-lg shadow-md">
+        <div className="flex items-center justify-center mb-4">
+          <FaQuestionCircle className="text-purple-600 mr-2" />
+          <h2 className="text-lg font-bold text-white">FAQ</h2>
+        </div>
+        <p className="text-sm text-gray-500 mt-2">
+          This UI is for SDK testing purposes only. Please open your console to
+          test the functionality. The backend is the main purpose of this
+          application.
+        </p>
       </div>
     </div>
   );
