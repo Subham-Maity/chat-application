@@ -1,6 +1,7 @@
 # React Chat App
 
 This is a chat application built using React and Mirrorfly SDK.
+![image](https://user-images.githubusercontent.com/97989643/231192247-91261921-5785-45fa-b381-4e93991340ac.png)
 
 ## Installation
 
