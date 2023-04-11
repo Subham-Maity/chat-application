@@ -27,3 +27,5 @@ function ReactIntegration() {
     </div>
   );
 }
+
+export default ReactIntegration;
