@@ -1,18 +1,13 @@
 import React from "react";
-import Mirrorfly from "mirrorfly";
+import ReactIntegration from "./reactIntegration";
 
-class App extends React.Component {
-  componentDidMount() {
-    Mirrorfly.init("<your-app-id>");
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <ReactIntegration />
+    </div>
+  );
 }
 
 export default App;
