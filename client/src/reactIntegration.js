@@ -84,6 +84,13 @@ function ReactIntegration() {
     console.log("Last Seen", lastSeen);
   };
 
+  //block user
+  const BlockUser = async () => {
+    const userJid = SDK.getJid("8985454546");
+    let blockUser = await SDK.blockUser(userJid.userJid);
+    console.log("Block User", blockUser);
+  };
+
   //Button For Operations
   return (
     <div className="bg-gray-900 text-white min-h-screen">
@@ -109,15 +116,8 @@ function ReactIntegration() {
         </button>
 
         <button
-          onClick={LogOut}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
-        >
-          Logout
-        </button>
-
-        <button
           onClick={textMessage}
-          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full shadow-md"
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold  py-2 px-4 rounded w-full shadow-md"
         >
           Send Text Message
         </button>
@@ -134,6 +134,19 @@ function ReactIntegration() {
           className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
         >
           Last Seen
+        </button>
+
+        <button
+          onClick={BlockUser}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full shadow-md"
+        >
+          Block User
+        </button>
+        <button
+          onClick={LogOut}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold mt-2 py-2 px-4 rounded w-full mb-2 shadow-md"
+        >
+          Logout
         </button>
       </div>
     </div>
