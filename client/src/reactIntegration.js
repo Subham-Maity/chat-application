@@ -55,26 +55,33 @@ function ReactIntegration() {
 
   //Button For Operations
   return (
-    <div>
-      <button onClick={initSDK}>InittialzeSDK</button>
-      <div>
-        <p>Register New user:</p>
-        <button onClick={registerUser}>Register</button>
-      </div>
-
-      <div>
-        <p>Login:</p>
-        <button onClick={() => userLogin(userName, password)}>Login</button>
-      </div>
-
-      <div>
-        <p>Send Text Message:</p>
-        <button onClick={textMessage}>Send Text Message</button>
-      </div>
-
-      <div>
-        <p>Receive Text Message:</p>
-        <button onClick={messageListener}>Receive Text Message</button>
+    <div className="bg-gray-900 text-white min-h-screen">
+      <h1 className="text-4xl font-bold p-4">MirrorFly Chat</h1>
+      <div className="p-4 max-w-md mx-auto bg-gray-800 rounded-lg shadow-md">
+        <button
+          onClick={initSDK}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
+        >
+          Initialize SDK
+        </button>
+        <button
+          onClick={registerUser}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
+        >
+          Register
+        </button>
+        <button
+          onClick={() => userLogin(userName, password)}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full mb-2 shadow-md"
+        >
+          Login
+        </button>
+        <button
+          onClick={textMessage}
+          className="bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-900 hover:to-purple-700 text-white font-bold py-2 px-4 rounded w-full shadow-md"
+        >
+          Send Text Message
+        </button>
       </div>
     </div>
   );
