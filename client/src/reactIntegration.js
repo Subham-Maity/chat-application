@@ -16,7 +16,9 @@ function ReactIntegration() {
       isTrialLicenseKey: `TRIAL_MODE`,
       callbackListeners: { connectionListener },
     };
-    await SDK.initializeSDK(initializeObj);
+
+    let initSDKResponse = await SDK.initializeSDK(initializeObj);
+    console.log("initSDKResponse", initSDKResponse);
   };
 
   return (
