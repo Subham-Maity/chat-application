@@ -1,1 +1,1 @@
-# Secure CHAT App (SDK)
+# CHAT App (SDK)
